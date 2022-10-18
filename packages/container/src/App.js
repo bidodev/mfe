@@ -12,7 +12,6 @@ function MarketingApp() {
   return <div id="marketing-app" ref={ref} />;
 }
 
-// ! To remove this comment
 function App() {
   return (
     <>
