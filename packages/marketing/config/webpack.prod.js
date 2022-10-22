@@ -6,6 +6,7 @@ configProd = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
+    publicPath: '/marketing/latest/'
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -14,7 +15,7 @@ configProd = {
       exposes: {
         "./Marketing": "./src/bootstrap",
       },
-      shared: ["react", "react-dom", "react-router-dome"],
+      shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
 };

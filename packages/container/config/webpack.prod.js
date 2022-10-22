@@ -18,7 +18,7 @@ const prodConfig = {
        * But we can also have it in different subdomains e.g // marketing: `marketing@${domain}/remoteEntry.js`
        */
       remotes: {
-        marketing: `marketing@${domain}/marketing/remoteEntry.js`,
+        marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
       },
       shared: ["react", "react-dom", "react-router-dom"],
     }),
