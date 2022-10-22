@@ -12,6 +12,7 @@ function MarketingApp() {
   return <div id="marketing-app" ref={ref} />;
 }
 
+// 
 function App() {
   return (
     <>
