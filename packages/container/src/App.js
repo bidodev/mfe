@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
-
+import { BrowserRouter } from "react-router-dom";
 import { mount } from "marketing/Marketing";
+import Header from '../components/header';
+
 
 function MarketingApp() {
   const ref = useRef(null);
@@ -15,11 +17,10 @@ function MarketingApp() {
 // 
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-      <hr/>
+    <BrowserRouter>
+      <Header />
       <MarketingApp />
-    </>
+    </BrowserRouter>
   );
 }
 
