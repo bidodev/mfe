@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-import { mount } from "marketing/MarketingApp";
+import { mount } from "marketing/Marketing";
 
 function MarketingApp() {
   const ref = useRef(null);
