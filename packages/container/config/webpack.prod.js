@@ -2,7 +2,15 @@ const { merge } = require("webpack-merge");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const commonConfig = require("./webpack.common");
 
-const domain = process.env.PRODUCTION_DOMAIN;
+function getDomain(){
+  const stages ={
+    dev: process.env.PRODUCTION_DOMAIN, // right now we have only this domain configured
+    int: process.env.PRODUCTION_DOMAIN_INT,
+    qa: process.env.PRODUCTION_DOMAIN_QA,
+    prod: process.env.PRODUCTION_DOMAIN_PROD,
+  }
+  return stages[process.env.STAGE]
+}
 
 const prodConfig = {
   mode: "production",
@@ -18,7 +26,7 @@ const prodConfig = {
        * But we can also have it in different subdomains e.g // marketing: `marketing@${domain}/remoteEntry.js`
        */
       remotes: {
-        marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
+        marketing: `marketing@${getDomain()}/marketing/latest/remoteEntry.js`,
       },
       shared: ["react", "react-dom", "react-router-dom"],
     }),
